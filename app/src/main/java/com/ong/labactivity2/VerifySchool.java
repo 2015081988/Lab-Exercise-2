@@ -30,7 +30,7 @@ public class VerifySchool extends AppCompatActivity {
             boolean found = false;
             String inputSchool = String.valueOf(mSchool.getText());
             for (String school: schools) {
-                if(inputSchool.equals(school) && !inputSchool.isEmpty()){
+                if(inputSchool.toUpperCase().equals(school.toUpperCase()) && !inputSchool.isEmpty()){
                     Toast.makeText(this, "School is competing in UAAP", Toast.LENGTH_LONG).show();
                     found = true;
                 }
