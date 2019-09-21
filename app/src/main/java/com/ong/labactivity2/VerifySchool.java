@@ -22,12 +22,9 @@ public class VerifySchool extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verify_school);
-
-        sharedPreferences = getSharedPreferences("data1", MODE_PRIVATE);
         Set<String> schools = sharedPreferences.getStringSet("schools", new HashSet<>());
-        mSchool = findViewById(R.id.edit_verify_school);
-        mVerify = findViewById(R.id.btn_verify);
-
+        sharedPreferences = getSharedPreferences("data1", MODE_PRIVATE);
+        initializeWidget();
 
         mVerify.setOnClickListener((View view)->{
             boolean found = false;
@@ -42,5 +39,10 @@ public class VerifySchool extends AppCompatActivity {
                 Toast.makeText(this, "School is not part of UAAP", Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    private void initializeWidget(){
+        mVerify = findViewById(R.id.btn_verify);
+        mSchool = findViewById(R.id.edit_verify_school);
     }
 }
