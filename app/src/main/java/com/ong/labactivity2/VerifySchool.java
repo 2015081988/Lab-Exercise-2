@@ -22,8 +22,8 @@ public class VerifySchool extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verify_school);
-        Set<String> schools = sharedPreferences.getStringSet("schools", new HashSet<>());
         sharedPreferences = getSharedPreferences("data1", MODE_PRIVATE);
+        Set<String> schools = sharedPreferences.getStringSet("schools", new HashSet<>());
         initializeWidget();
 
         mVerify.setOnClickListener((View view)->{
